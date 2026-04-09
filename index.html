@@ -4,14 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TRAXION | Sistema Interno</title>
-
     <link rel="stylesheet" href="style.css" />
   </head>
-
   <body>
     <header class="navbar">
       <div class="logo">TRAXION</div>
-
       <div class="user-info">
         <span>Ing. Guevara</span>
         <span>Ingeniero de Procesos</span>
@@ -23,7 +20,6 @@
       <section class="modulos">
         <div class="card">
           <h2>Mantenimiento</h2>
-
           <nav class="card-menu">
             <a href="preventivo.html">Preventivo</a>
             <a href="correctivo.html">Correctivo</a>
@@ -33,7 +29,6 @@
 
         <div class="card">
           <h2>Taller</h2>
-
           <nav class="card-menu">
             <a href="presupuestos.html">Presupuestos</a>
             <a href="facturas.html">Facturas</a>
@@ -42,7 +37,6 @@
 
         <div class="card">
           <h2>Operaciones</h2>
-
           <nav class="card-menu">
             <a href="operaciones-diarias.html">Operaciones Diarias</a>
             <a href="operaciones-periodicas.html">Operaciones Periódicas</a>
@@ -52,7 +46,6 @@
 
         <div class="card">
           <h2>Registro de Unidades</h2>
-
           <nav class="card-menu">
             <a href="registro.html">Acceder</a>
           </nav>
@@ -63,21 +56,25 @@
         <div class="tarjeta">
           <h1>Asistente Predictivo de Flota</h1>
 
+          <input type="radio" name="logica" id="alto" />
+          <input type="radio" name="logica" id="medio" />
+          <input type="radio" name="logica" id="bajo" checked />
+
           <div class="contenido-asistente">
             <div class="semaforo">
-              <div class="luz l-roja" id="rojo"></div>
-              <div class="luz l-amarilla" id="amarillo"></div>
-              <div class="luz l-verde" id="verde"></div>
+              <div class="luz l-roja"></div>
+              <div class="luz l-amarilla"></div>
+              <div class="luz l-verde"></div>
             </div>
 
             <form class="form-asistente">
               <label>Kilometraje desde último mantenimiento</label>
-              <input type="number" id="km" placeholder="Ingrese kilometraje" />
+              <input type="number" placeholder="95000" value="95000" />
 
               <label>¿Hay código de falla?</label>
-              <select id="falla">
-                <option value="no">No</option>
-                <option value="si">Sí</option>
+              <select>
+                <option>No</option>
+                <option>Sí</option>
               </select>
 
               <label>Tipo de falla</label>
@@ -87,46 +84,27 @@
                 <option>Frenos</option>
               </select>
 
-              <label>Temperatura alta</label>
-              <select>
-                <option>No</option>
-                <option>Sí</option>
-              </select>
+              <div class="controles-simulacion">
+                <label for="bajo" class="btn-caso verde">CASO BAJO</label>
+                <label for="medio" class="btn-caso amarillo">CASO MEDIO</label>
+                <label for="alto" class="btn-caso rojo">CASO ALTO</label>
+              </div>
 
-              <button
-                type="button"
-                class="btn-evaluar"
-                onclick="evaluarUnidad()"
-              >
-                Evaluar Unidad
-              </button>
+              <button type="button" class="btn-evaluar">Guardar Reporte</button>
             </form>
           </div>
         </div>
       </section>
+
+      <section class="acceso-ai">
+        <a
+          href="https://chatgpt.com/share/69d742f6-71a0-8328-941f-0285e632b032"
+          target="_blank"
+          class="btn-evaluar boton-ai"
+        >
+          Abrir Agente de IA de Flota
+        </a>
+      </section>
     </main>
-
-    <script>
-      function evaluarUnidad() {
-        let km = document.getElementById("km").value;
-        let falla = document.getElementById("falla").value;
-
-        let rojo = document.getElementById("rojo");
-        let amarillo = document.getElementById("amarillo");
-        let verde = document.getElementById("verde");
-
-        rojo.style.background = "#444";
-        amarillo.style.background = "#444";
-        verde.style.background = "#444";
-
-        if (falla === "si" || km > 30000) {
-          rojo.style.background = "red";
-        } else if (km >= 20000) {
-          amarillo.style.background = "yellow";
-        } else {
-          verde.style.background = "lime";
-        }
-      }
-    </script>
   </body>
 </html>

@@ -1,22 +1,16 @@
-/* VARIABLES */
-
+/* VARIABLES DE COLOR TRAXION */
 :root {
   --color-principal: #158f5b;
   --color-fondo: #f4f6f8;
-  --color-card: #ffffff;
   --color-texto: #333;
 }
 
-/* RESET */
-
+/* RESET GENERAL */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family:
-    Segoe UI,
-    Arial,
-    sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
 }
 
 body {
@@ -24,16 +18,13 @@ body {
   color: var(--color-texto);
 }
 
-/* NAVBAR */
-
+/* BARRA DE NAVEGACIÓN */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   background: var(--color-principal);
   color: white;
-
   padding: 16px 40px;
 }
 
@@ -49,40 +40,31 @@ body {
   font-size: 14px;
 }
 
-/* LAYOUT PRINCIPAL */
-
+/* DISEÑO DE LA PÁGINA (DOS COLUMNAS) */
 .layout-principal {
   display: grid;
-
   grid-template-columns: 1fr 1fr;
-
   gap: 40px;
-
   padding: 40px;
 }
 
-/* MODULOS */
-
+/* MÓDULOS */
 .modulos {
   display: grid;
-
-  grid-template-columns: repeat(2, 1fr);
-
+  grid-template-columns: 1fr 1fr;
   gap: 25px;
 }
 
 .card {
   background: white;
-
   padding: 25px;
-
   border-radius: 10px;
-
   box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
 }
 
 .card h2 {
   margin-bottom: 15px;
+  font-size: 1.2rem;
 }
 
 .card-menu {
@@ -94,157 +76,135 @@ body {
 .card-menu a {
   text-decoration: none;
   color: var(--color-principal);
+  font-weight: bold;
 }
 
-/* PANEL ASISTENTE */
-
-.panel-asistente {
-  display: flex;
-  justify-content: center;
-}
-
+/* TARJETA ASISTENTE */
 .tarjeta {
   background: white;
-
   padding: 30px;
-
   border-radius: 12px;
-
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  width: 460px;
+}
 
-  width: 420px;
+.tarjeta h1 {
+  font-size: 1.4rem;
 }
 
 /* OCULTAR RADIOS */
-
-.tarjeta input[type="radio"] {
+input[type="radio"] {
   display: none;
 }
 
+/* CONTENEDOR SEMAFORO + FORM */
 .contenido-asistente {
   display: flex;
-
   gap: 25px;
-
   margin-top: 20px;
+  align-items: center;
 }
 
 /* SEMAFORO */
-
 .semaforo {
   background: #222;
-
   width: 70px;
-
-  height: 200px;
-
+  height: 210px;
   border-radius: 20px;
-
   display: flex;
-
   flex-direction: column;
-
   justify-content: space-around;
-
   align-items: center;
-
   padding: 15px;
 }
 
 .luz {
-  width: 40px;
-
-  height: 40px;
-
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-
-  background: #444;
+  background: #333;
 }
 
 /* LOGICA SEMAFORO */
-
 #alto:checked ~ .contenido-asistente .l-roja {
-  background: red;
+  background: #ff3b30;
+  box-shadow: 0 0 15px #ff3b30;
 }
 
 #medio:checked ~ .contenido-asistente .l-amarilla {
-  background: yellow;
+  background: #ffcc00;
+  box-shadow: 0 0 15px #ffcc00;
 }
 
 #bajo:checked ~ .contenido-asistente .l-verde {
-  background: lime;
+  background: #4cd964;
+  box-shadow: 0 0 15px #4cd964;
 }
 
 /* FORMULARIO */
-
 .form-asistente {
   display: flex;
-
   flex-direction: column;
-
-  gap: 10px;
-
-  width: 250px;
+  gap: 8px;
 }
 
 .form-asistente input,
 .form-asistente select {
   padding: 8px;
-
   border-radius: 6px;
-
   border: 1px solid #ccc;
 }
 
-/* BOTONES CASO */
-
+/* BOTONES SIMULACION */
 .controles-simulacion {
   display: flex;
-
-  gap: 8px;
-
-  margin-top: 10px;
+  gap: 5px;
+  margin-top: 15px;
 }
 
 .btn-caso {
-  padding: 6px 10px;
-
+  flex: 1;
+  padding: 8px;
   border-radius: 5px;
-
   color: white;
-
-  font-size: 12px;
-
+  font-size: 10px;
   cursor: pointer;
+  text-align: center;
+  font-weight: bold;
 }
 
-.btn-caso.verde {
+.verde {
   background: #2ecc71;
 }
-
-.btn-caso.amarillo {
+.amarillo {
   background: #f1c40f;
-  color: #000;
+  color: black;
 }
-
-.btn-caso.rojo {
+.rojo {
   background: #e74c3c;
 }
 
-/* BOTON EVALUAR */
-
+/* BOTON FINAL */
 .btn-evaluar {
-  margin-top: 12px;
-
-  padding: 10px;
-
+  margin-top: 15px;
+  padding: 12px;
   background: var(--color-principal);
-
   color: white;
-
   border: none;
-
   border-radius: 6px;
-
   cursor: pointer;
+}
+
+/* BOTON ACCESO AI */
+
+.acceso-ai {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.boton-ai {
+  text-decoration: none;
+  padding: 14px 24px;
+  font-size: 14px;
 }
