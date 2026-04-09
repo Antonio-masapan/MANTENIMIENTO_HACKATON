@@ -1,0 +1,250 @@
+/* VARIABLES */
+
+:root {
+  --color-principal: #158f5b;
+  --color-fondo: #f4f6f8;
+  --color-card: #ffffff;
+  --color-texto: #333;
+}
+
+/* RESET */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:
+    Segoe UI,
+    Arial,
+    sans-serif;
+}
+
+body {
+  background: var(--color-fondo);
+  color: var(--color-texto);
+}
+
+/* NAVBAR */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: var(--color-principal);
+  color: white;
+
+  padding: 16px 40px;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.user-info {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+}
+
+/* LAYOUT PRINCIPAL */
+
+.layout-principal {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 40px;
+
+  padding: 40px;
+}
+
+/* MODULOS */
+
+.modulos {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 25px;
+}
+
+.card {
+  background: white;
+
+  padding: 25px;
+
+  border-radius: 10px;
+
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
+}
+
+.card h2 {
+  margin-bottom: 15px;
+}
+
+.card-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card-menu a {
+  text-decoration: none;
+  color: var(--color-principal);
+}
+
+/* PANEL ASISTENTE */
+
+.panel-asistente {
+  display: flex;
+  justify-content: center;
+}
+
+.tarjeta {
+  background: white;
+
+  padding: 30px;
+
+  border-radius: 12px;
+
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+
+  width: 420px;
+}
+
+/* OCULTAR RADIOS */
+
+.tarjeta input[type="radio"] {
+  display: none;
+}
+
+.contenido-asistente {
+  display: flex;
+
+  gap: 25px;
+
+  margin-top: 20px;
+}
+
+/* SEMAFORO */
+
+.semaforo {
+  background: #222;
+
+  width: 70px;
+
+  height: 200px;
+
+  border-radius: 20px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-around;
+
+  align-items: center;
+
+  padding: 15px;
+}
+
+.luz {
+  width: 40px;
+
+  height: 40px;
+
+  border-radius: 50%;
+
+  background: #444;
+}
+
+/* LOGICA SEMAFORO */
+
+#alto:checked ~ .contenido-asistente .l-roja {
+  background: red;
+}
+
+#medio:checked ~ .contenido-asistente .l-amarilla {
+  background: yellow;
+}
+
+#bajo:checked ~ .contenido-asistente .l-verde {
+  background: lime;
+}
+
+/* FORMULARIO */
+
+.form-asistente {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+  width: 250px;
+}
+
+.form-asistente input,
+.form-asistente select {
+  padding: 8px;
+
+  border-radius: 6px;
+
+  border: 1px solid #ccc;
+}
+
+/* BOTONES CASO */
+
+.controles-simulacion {
+  display: flex;
+
+  gap: 8px;
+
+  margin-top: 10px;
+}
+
+.btn-caso {
+  padding: 6px 10px;
+
+  border-radius: 5px;
+
+  color: white;
+
+  font-size: 12px;
+
+  cursor: pointer;
+}
+
+.btn-caso.verde {
+  background: #2ecc71;
+}
+
+.btn-caso.amarillo {
+  background: #f1c40f;
+  color: #000;
+}
+
+.btn-caso.rojo {
+  background: #e74c3c;
+}
+
+/* BOTON EVALUAR */
+
+.btn-evaluar {
+  margin-top: 12px;
+
+  padding: 10px;
+
+  background: var(--color-principal);
+
+  color: white;
+
+  border: none;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+}
